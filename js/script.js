@@ -29,7 +29,10 @@ let radios = [
 radios.forEach(radio => {
     console.log(radio.infos)
     fetch(`${radio.infos}`, {
-        mode: "no-cors"
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+        }
     })
         .then(response => response.text())
         .then(data => {
@@ -38,7 +41,7 @@ radios.forEach(radio => {
             <div class="col s4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/sample-1.jpg">
+                        <img src="https://www.radiofrance.fr/s3/cruiser-production/2019/11/d4ffbe9a-ea15-4102-b36b-d66f8db8b65e/250x250_rf_omm_0001456338_dnc.0065062798.webp">
                         <span class="card-title">Card Title</span>
                         <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
                     </div>
